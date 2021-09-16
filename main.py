@@ -12,7 +12,7 @@ def linear_search(mylist, key):
 	for i,v in enumerate(mylist):
 		if v == key:
 			return i
-		return -1
+	return -1
 
 def test_linear_search():
 	""" done. """
