@@ -99,17 +99,16 @@ def time_search(search_fn, mylist, key):
 	pass
 
 def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
-	broad_list = [()]
+	broad_list = []
 	for i in sizes:
 		i_list = []
 		for j in range(i):
 			i_list.append(j)
 		binarySearchTime = time_search(binary_search,i_list,-1)
 		linearSearchTime = time_search(linear_search,i_list,-1)
-		broad_list.append(i)
 		broad_list.append([i,linearSearchTime,binarySearchTime])
-	
-	return list
+
+	return broad_list
 
 	"""
 	Compare the running time of linear_search and binary_search
@@ -144,4 +143,4 @@ def test_compare_search():
 	assert res[1][1] < 1
 
 test_compare_search()
-#test_binary_search()
+test_binary_search()
